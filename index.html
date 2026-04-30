@@ -8,8 +8,6 @@
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'Segoe UI',Arial,sans-serif;background:#1a1a1a;
      min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:30px 16px;}
-
-/* CABECERA */
 .sintra-header{width:100%;max-width:780px;background:#111;border:2px solid #C9A84C;
   border-radius:10px;overflow:hidden;margin-bottom:22px;box-shadow:0 4px 24px rgba(0,0,0,.6);}
 .mb-topbar{display:flex;align-items:center;}
@@ -21,20 +19,16 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#1a1a1a;
 .mb-subbar{display:flex;justify-content:center;gap:20px;padding:6px 18px;flex-wrap:wrap;}
 .mb-subbar span{font-size:.71rem;color:#888;}
 .mb-subbar span b{color:#C9A84C;}
-
-/* CARD */
 .card{background:#fff;width:100%;max-width:780px;border-radius:10px;
   overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,.5);}
 .card-header{background:#111;border-bottom:3px solid #C9A84C;padding:16px 26px;}
 .card-header h2{color:#C9A84C;font-size:.98rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;}
 .card-header p{color:#aaa;font-size:.77rem;margin-top:3px;}
 .card-body{padding:26px;}
-
 .section-title{font-size:.73rem;font-weight:700;color:#fff;background:#111;
   text-transform:uppercase;letter-spacing:1.5px;padding:6px 10px;
   margin:20px 0 12px;border-left:4px solid #C9A84C;border-radius:2px;}
 .section-title:first-child{margin-top:0;}
-
 .row{display:flex;gap:11px;flex-wrap:wrap;}
 .field{display:flex;flex-direction:column;flex:1;min-width:185px;margin-bottom:11px;}
 .field.full{min-width:100%;}
@@ -52,7 +46,6 @@ input:focus,select:focus,textarea:focus{border-color:#C9A84C;background:#fffdf3;
 input[readonly]{background:#f0ede0;color:#555;cursor:not-allowed;
   border-color:#e0d5a0;font-weight:600;}
 textarea{resize:vertical;min-height:60px;}
-
 .upload-area{border:2px dashed #C9A84C;border-radius:7px;padding:13px;
   text-align:center;background:#fffdf3;cursor:pointer;transition:background .2s;}
 .upload-area:hover{background:#fff7d6;}
@@ -60,7 +53,6 @@ textarea{resize:vertical;min-height:60px;}
 .upload-label{cursor:pointer;color:#555;font-size:.79rem;display:block;}
 .upload-icon{font-size:1.45rem;display:block;margin-bottom:3px;}
 .file-name{font-size:.77rem;color:#C9A84C;font-weight:600;margin-top:4px;min-height:15px;}
-
 .download-btn{display:inline-flex;align-items:center;gap:7px;
   background:#111;color:#C9A84C;border:1.5px solid #C9A84C;
   padding:9px 17px;border-radius:6px;font-size:.8rem;font-weight:700;
@@ -73,7 +65,6 @@ textarea{resize:vertical;min-height:60px;}
   letter-spacing:2px;border:none;border-radius:7px;cursor:pointer;
   margin-top:16px;transition:opacity .2s,transform .1s;}
 .btn-submit:hover{opacity:.9;transform:translateY(-1px);}
-
 .info-box{background:#f9f6ec;border-left:3px solid #C9A84C;padding:9px 12px;
   border-radius:0 5px 5px 0;font-size:.75rem;color:#555;margin:3px 0 11px;line-height:1.6;}
 .legal{background:#f9f6ec;border-left:3px solid #C9A84C;padding:10px 13px;
@@ -82,18 +73,15 @@ textarea{resize:vertical;min-height:60px;}
 .check-row input{margin-top:2px;accent-color:#C9A84C;width:15px;height:15px;flex-shrink:0;}
 .check-row label{font-size:.78rem;color:#333;text-transform:none;
   letter-spacing:0;font-weight:400;line-height:1.5;}
-
 .jur-table{width:100%;border-collapse:collapse;font-size:.72rem;margin:7px 0;}
 .jur-table th{background:#111;color:#C9A84C;padding:5px 8px;text-align:left;
   font-weight:700;text-transform:uppercase;letter-spacing:.5px;}
 .jur-table td{padding:5px 8px;border-bottom:1px solid #eee;vertical-align:top;
   color:#444;line-height:1.4;}
 .jur-table tr:nth-child(even) td{background:#fafafa;}
-
 .nota-msg{font-size:.73rem;font-style:italic;margin-top:5px;}
 .card-footer{background:#111;padding:11px 26px;text-align:center;
   font-size:.72rem;color:#888;border-top:2px solid #C9A84C;line-height:1.7;}
-
 @media(max-width:520px){
   .mb-titles h1{font-size:1.2rem;}
   .card-body{padding:14px;}
@@ -186,7 +174,6 @@ textarea{resize:vertical;min-height:60px;}
 <option value="Japonesa">
 <option value="Coreana"></datalist>
 
-<!-- CABECERA INSTITUCIONAL -->
 <div class="sintra-header">
   <div class="mb-topbar" style="padding:16px 22px;">
     <div class="mb-titles">
@@ -212,13 +199,12 @@ textarea{resize:vertical;min-height:60px;}
   <div class="card-body">
   <form id="mainForm" action="https://formsubmit.co/sintrafiduciarios@gmail.com"
         method="POST" enctype="multipart/form-data">
-    <input type="hidden" name="_subject"      value="Nueva Solicitud de Afiliación — SINTRAFIDUCIARIOS">
-    <input type="hidden" name="_captcha"      value="false">
-    <input type="hidden" name="_template"     value="table">
+    <input type="hidden" name="_subject" value="Nueva Solicitud de Afiliación — SINTRAFIDUCIARIOS">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
     <input type="hidden" name="_autoresponse"
       value="Hemos recibido su solicitud de afiliación a SINTRAFIDUCIARIOS. La Junta Directiva la estudiará y le informaremos el resultado. sintrafiduciarios@gmail.com">
 
-    <!-- I. DATOS PERSONALES -->
     <div class="section-title">I. Datos Personales del Aspirante</div>
     <div class="row">
       <div class="field"><label>Primer nombre <span class="req">*</span></label>
@@ -251,12 +237,10 @@ textarea{resize:vertical;min-height:60px;}
         <input type="date" id="p_fn" name="Fecha_nacimiento" required></div>
       <div class="field"><label>Lugar de nacimiento <span class="req">*</span></label>
         <input type="text" id="p_ln" name="Lugar_nacimiento"
-          placeholder="Ej: Cali, Valle del Cauca" required
-          list="dl-ciudades" autocomplete="off"></div>
+          placeholder="Ej: Cali, Valle del Cauca" required list="dl-ciudades" autocomplete="off"></div>
       <div class="field"><label>Nacionalidad <span class="req">*</span></label>
         <input type="text" id="p_nac" name="Nacionalidad"
-          placeholder="Ej: Colombiana" required
-          list="dl-nac" autocomplete="off"></div>
+          placeholder="Ej: Colombiana" required list="dl-nac" autocomplete="off"></div>
     </div>
     <div class="row">
       <div class="field w33"><label>Género <span class="req">*</span></label>
@@ -273,8 +257,7 @@ textarea{resize:vertical;min-height:60px;}
         </select></div>
       <div class="field"><label>Ciudad de residencia <span class="req">*</span></label>
         <input type="text" id="p_cr" name="Ciudad_residencia"
-          placeholder="Ej: Bogotá D.C." required
-          list="dl-ciudades" autocomplete="off"></div>
+          placeholder="Ej: Bogotá D.C." required list="dl-ciudades" autocomplete="off"></div>
     </div>
     <div class="row">
       <div class="field full"><label>Dirección de residencia <span class="req">*</span></label>
@@ -284,8 +267,7 @@ textarea{resize:vertical;min-height:60px;}
     <div class="row">
       <div class="field w33"><label>Teléfono fijo</label>
         <input type="tel" id="p_tf" name="Telefono_fijo"
-          placeholder="Ej: 6013456789"
-          oninput="soloNumeros(this)" inputmode="numeric"></div>
+          placeholder="Ej: 6013456789" oninput="soloNumeros(this)" inputmode="numeric"></div>
       <div class="field w33"><label>Celular <span class="req">*</span></label>
         <input type="tel" id="p_cel" name="Celular"
           placeholder="Ej: 3116549870" required
@@ -295,7 +277,6 @@ textarea{resize:vertical;min-height:60px;}
           placeholder="Ej: carlos.rodriguez@correo.com" required></div>
     </div>
 
-    <!-- II. DATOS LABORALES -->
     <div class="section-title">II. Datos Laborales</div>
     <div class="row">
       <div class="field">
@@ -315,8 +296,7 @@ textarea{resize:vertical;min-height:60px;}
     <div class="row">
       <div class="field w33"><label>NIT de la entidad <span class="req">*</span></label>
         <input type="text" id="l_nit" name="NIT_entidad"
-          placeholder="Ej: 860.525.148-5" required
-          oninput="soloNumeros(this,'.','-')"></div>
+          placeholder="Ej: 860.525.148-5" required oninput="soloNumeros(this,'.','-')"></div>
       <div class="field full"><label>Dirección de la entidad <span class="req">*</span></label>
         <input type="text" id="l_dent" name="Direccion_entidad"
           placeholder="Ej: Calle 72 # 10-03, Bogotá D.C." required></div>
@@ -367,7 +347,6 @@ textarea{resize:vertical;min-height:60px;}
         </select></div>
     </div>
 
-    <!-- III. DECLARACIÓN -->
     <div class="section-title">III. Declaración y Compromisos del Aspirante</div>
     <div class="legal">
       El/La suscrito/a manifiesta de manera <b>libre, voluntaria e inequívoca</b> su deseo de
@@ -389,7 +368,6 @@ textarea{resize:vertical;min-height:60px;}
       </ol>
     </div>
 
-    <!-- IV. SUSTENTO JURÍDICO -->
     <div class="section-title">IV. Sustento Jurídico</div>
     <table class="jur-table">
       <tr><th>Norma</th><th>Contenido y Alcance</th></tr>
@@ -403,7 +381,6 @@ textarea{resize:vertical;min-height:60px;}
       <tr><td><b>Estatutos Arts. 31°, 33°, 34°</b></td><td>Sin cuota de admisión. Cuota ordinaria = 0.5% del salario básico mensual.</td></tr>
     </table>
 
-    <!-- V. DOCUMENTOS -->
     <div class="section-title">V. Documentos Requeridos</div>
     <div style="margin-bottom:14px;">
       <p style="font-size:.8rem;color:#333;font-weight:600;margin-bottom:7px;">
@@ -439,20 +416,23 @@ textarea{resize:vertical;min-height:60px;}
       </div>
     </div>
 
-    <!-- VI. AUTORIZACIONES -->
     <div class="section-title">VI. Autorización de Datos y Confirmación</div>
     <div class="legal">
       Conforme al <b>Art. 5° Ley 1581 de 2012</b>, la información suministrada constituye
       <b>dato sensible</b> por corresponder a afiliación sindical.
       Su tratamiento es exclusivo para gestionar esta solicitud.
     </div>
+    <input type="hidden" id="h_ch1" name="1_Autoriza_tratamiento_datos" value="❌ No confirmado">
+    <input type="hidden" id="h_ch2" name="2_Afiliacion_voluntaria" value="❌ No confirmado">
+    <input type="hidden" id="h_ch3" name="3_Acepta_estatutos" value="❌ No confirmado">
+    <input type="hidden" id="h_ch4" name="4_Info_veridica" value="❌ No confirmado">
     <div class="check-row">
-      <input type="checkbox" id="ch1" name="Autoriza_datos" value="Sí" required>
+      <input type="checkbox" id="ch1" name="" value="Sí" required onchange="document.getElementById('h_ch1').value=this.checked?'✅ Sí, autoriza tratamiento de datos (Ley 1581/2012)':'❌ No confirmado'">
       <label for="ch1">Autorizo el tratamiento de mis datos personales conforme a la
         Ley 1581 de 2012, exclusivamente para los fines de la afiliación sindical. <span class="req">*</span></label>
     </div>
     <div class="check-row">
-      <input type="checkbox" id="ch2" name="Afiliacion_voluntaria" value="Sí" required>
+      <input type="checkbox" id="ch2" name="" value="Sí" required onchange="document.getElementById('h_ch2').value=this.checked?'✅ Sí, afiliación libre y voluntaria (Art. 39° C.P.)':'❌ No confirmado'">
       <label for="ch2">Manifiesto que mi afiliación es <b>libre, voluntaria e inequívoca</b>
         en ejercicio del Art. 39° C.P. — Art. 353° CST — Ley 584/2000. <span class="req">*</span></label>
     </div>
@@ -462,11 +442,11 @@ textarea{resize:vertical;min-height:60px;}
         <span style="font-size:.75rem;font-weight:700;color:#333;text-transform:uppercase;letter-spacing:.5px;">
           📋 Estatutos Sociales de SINTRAFIDUCIARIOS
         </span>
-        <a href="https://raw.githubusercontent.com/sintrafiduciarios-ops/Solicitud-de-Afiliacion/main/ESTATUTOS-SOCIALES-SINTRAFIDUCIARIOS-FIRMADO-2.pdf" target="_blank" download="ESTATUTOS-SOCIALES-SINTRAFIDUCIARIOS.pdf"
+        <a href="https://raw.githubusercontent.com/sintrafiduciarios-ops/Solicitud-de-Afiliacion/main/ESTATUTOS-SOCIALES-SINTRAFIDUCIARIOS-FIRMADO-2.pdf"
+          target="_blank" download="ESTATUTOS-SOCIALES-SINTRAFIDUCIARIOS.pdf"
           style="display:inline-flex;align-items:center;gap:6px;background:#111;color:#C9A84C;
           border:1.5px solid #C9A84C;padding:6px 14px;border-radius:5px;font-size:.76rem;
-          font-weight:700;text-decoration:none;letter-spacing:.5px;text-transform:uppercase;
-          transition:all .2s;"
+          font-weight:700;text-decoration:none;letter-spacing:.5px;text-transform:uppercase;"
           onmouseover="this.style.background='#C9A84C';this.style.color='#111';"
           onmouseout="this.style.background='#111';this.style.color='#C9A84C';">
           ⬇ Descargar Estatutos (PDF)
@@ -478,14 +458,14 @@ textarea{resize:vertical;min-height:60px;}
         el régimen de cuotas de los <b>Arts. 31°–34°</b> y el régimen disciplinario del <b>Cap. XI</b>.
       </p>
       <div class="check-row" style="margin:0;">
-        <input type="checkbox" id="ch3" name="Acepta_estatutos" value="Sí" required>
+        <input type="checkbox" id="ch3" name="" value="Sí" required onchange="document.getElementById('h_ch3').value=this.checked?'✅ Sí, acepta Estatutos SINTRAFIDUCIARIOS (Arts. 7°,8°,31°–34°, Cap. XI)':'❌ No confirmado'">
         <label for="ch3">He leído y acepto los Estatutos de SINTRAFIDUCIARIOS, incluyendo
           obligaciones (Art. 8°), cuotas (Arts. 31°–34°) y régimen disciplinario (Cap. XI).
           <span class="req">*</span></label>
       </div>
     </div>
     <div class="check-row">
-      <input type="checkbox" id="ch4" name="Info_veridica" value="Sí" required>
+      <input type="checkbox" id="ch4" name="" value="Sí" required onchange="document.getElementById('h_ch4').value=this.checked?'✅ Sí, declara información verídica y completa':'❌ No confirmado'">
       <label for="ch4">Declaro bajo la gravedad del juramento que la información consignada
         es <b>verídica y completa</b>. <span class="req">*</span></label>
     </div>
@@ -595,8 +575,6 @@ function descargarCarta(){
   btn.textContent='⏳ Generando PDF...';
 
   const cartaHtml=`<div id="carta-pdf" style="font-family:'Times New Roman',serif;font-size:10pt;color:#111;width:170mm;margin:0 auto;">
-
-  <!-- MEMBRETE -->
   <div style="background:#111;margin-bottom:0;">
     <div style="padding:10px 16px;">
       <div style="font-size:18pt;font-weight:900;letter-spacing:3px;color:#C9A84C;text-transform:uppercase;line-height:1;">SINTRAFIDUCIARIOS</div>
@@ -609,12 +587,9 @@ function descargarCarta(){
       <span style="font-size:7pt;color:#aaa;">Calle 127A N.° 49-67, Apto. 104, Int. 2, Unidad 3, Conjunto Atabanza, Bogotá D.C.</span>
     </div>
   </div>
-
-  <!-- TÍTULO -->
   <div style="text-align:center;font-size:12pt;font-weight:700;text-transform:uppercase;letter-spacing:2px;border-bottom:2px solid #111;padding:10px 0 5px;margin-top:10px;">Solicitud de Afiliación</div>
   <div style="text-align:center;font-size:8pt;color:#666;margin-bottom:10px;padding-top:3px;">Formato oficial · Art. 7° Estatutos SINTRAFIDUCIARIOS &nbsp;|&nbsp; Número de radicado: _____________________ &nbsp;|&nbsp; 2026</div>
 
-  <!-- I. DATOS PERSONALES -->
   <div style="font-size:8.5pt;font-weight:700;text-transform:uppercase;letter-spacing:.8px;background:#111;color:#C9A84C;padding:4px 8px;margin:8px 0 4px;">I. Datos Personales del Aspirante</div>
   <table style="width:100%;border-collapse:collapse;font-size:9pt;margin-bottom:4px;">
     <tr><td style="padding:3px 6px;border:1px solid #ccc;font-weight:bold;width:28%;background:#f9f8f3;">Primer nombre:</td><td style="padding:3px 6px;border:1px solid #ccc;width:22%;">${gv('p_n1')}</td><td style="padding:3px 6px;border:1px solid #ccc;font-weight:bold;width:28%;background:#f9f8f3;">Segundo nombre:</td><td style="padding:3px 6px;border:1px solid #ccc;">${gv('p_n2')||'—'}</td></tr>
@@ -629,7 +604,6 @@ function descargarCarta(){
     <tr><td style="padding:3px 6px;border:1px solid #ccc;font-weight:bold;background:#f9f8f3;">Correo electrónico:</td><td colspan="3" style="padding:3px 6px;border:1px solid #ccc;">${gv('p_email')}</td></tr>
   </table>
 
-  <!-- II. DATOS LABORALES -->
   <div style="font-size:8.5pt;font-weight:700;text-transform:uppercase;letter-spacing:.8px;background:#111;color:#C9A84C;padding:4px 8px;margin:8px 0 4px;">II. Datos Laborales</div>
   <table style="width:100%;border-collapse:collapse;font-size:9pt;margin-bottom:4px;">
     <tr><td style="padding:3px 6px;border:1px solid #ccc;font-weight:bold;width:28%;background:#f9f8f3;">Entidad empleadora:</td><td colspan="3" style="padding:3px 6px;border:1px solid #ccc;">${entidad}</td></tr>
@@ -640,7 +614,6 @@ function descargarCarta(){
     <tr><td style="padding:3px 6px;border:1px solid #ccc;font-weight:bold;background:#f9f8f3;">Cuota sindical (0.5%):</td><td style="padding:3px 6px;border:1px solid #ccc;">${fmtCuota}</td><td style="padding:3px 6px;border:1px solid #ccc;font-weight:bold;background:#f9f8f3;">Forma de pago:</td><td style="padding:3px 6px;border:1px solid #ccc;">${gv('l_fp')}</td></tr>
   </table>
 
-  <!-- III. DECLARACIÓN -->
   <div style="font-size:8.5pt;font-weight:700;text-transform:uppercase;letter-spacing:.8px;background:#111;color:#C9A84C;padding:4px 8px;margin:8px 0 4px;">III. Declaración y Compromisos</div>
   <p style="font-size:9pt;line-height:1.7;text-align:justify;margin:4px 0;">Yo, <b>${nombre}</b>, identificado/a con ${gv('p_td')} N.° <b>${gv('p_nd')}</b>, manifiesto de manera <b>libre, voluntaria e inequívoca</b> mi deseo de afiliarme al SINDICATO DE TRABAJADORES FIDUCIARIOS — SINTRAFIDUCIARIOS, en ejercicio del derecho de asociación sindical consagrado en el Art. 39° C.P., el Art. 353° CST, la Ley 584 de 2000 (Art. 2°) y los Convenios OIT N.° 87 y 98 (Leyes 26 y 27 de 1976). En consecuencia, DECLARO Y ACEPTO:</p>
   <ol style="margin:4px 0 4px 14px;line-height:1.7;font-size:9pt;">
@@ -652,7 +625,6 @@ function descargarCarta(){
     <li>Que la Junta Directiva puede negar el ingreso (<b>Parágrafo 1° Art. 7°</b>), siendo apelable ante la Asamblea General.</li>
   </ol>
 
-  <!-- IV. SUSTENTO JURÍDICO -->
   <div style="font-size:8.5pt;font-weight:700;text-transform:uppercase;letter-spacing:.8px;background:#111;color:#C9A84C;padding:4px 8px;margin:8px 0 4px;">IV. Sustento Jurídico</div>
   <table style="width:100%;border-collapse:collapse;font-size:8.5pt;margin-bottom:4px;">
     <tr><th style="background:#111;color:#C9A84C;padding:3px 6px;text-align:left;">Norma</th><th style="background:#111;color:#C9A84C;padding:3px 6px;text-align:left;">Contenido y Alcance</th></tr>
@@ -664,7 +636,6 @@ function descargarCarta(){
     <tr style="background:#f9f9f9;"><td style="padding:3px 6px;font-weight:bold;">Estatutos Arts. 31°, 33°, 34°</td><td style="padding:3px 6px;">Sin cuota de admisión. Cuota ordinaria = 0.5% del salario básico mensual.</td></tr>
   </table>
 
-  <!-- V. FIRMAS — página 2 -->
   <div style="page-break-before:always;padding-top:10px;">
     <div style="font-size:8.5pt;font-weight:700;text-transform:uppercase;letter-spacing:.8px;background:#111;color:#C9A84C;padding:4px 8px;margin-bottom:12px;">V. Firmas y Fecha de Solicitud</div>
     <p style="font-size:9.5pt;line-height:1.8;margin-bottom:40px;">En constancia de lo anterior, suscribo la presente solicitud en la ciudad de Bogotá D.C., a los <b>${fecha}</b>.</p>
@@ -690,7 +661,6 @@ function descargarCarta(){
     </table>
   </div>
 
-  <!-- VI. JUNTA DIRECTIVA — página 3 -->
   <div style="page-break-before:always;padding-top:10px;">
     <div style="font-size:8.5pt;font-weight:700;text-transform:uppercase;letter-spacing:.8px;background:#111;color:#C9A84C;padding:4px 8px;margin-bottom:6px;">VI. Diligenciamiento Interno — Junta Directiva</div>
     <p style="font-size:8pt;color:#666;font-style:italic;text-align:center;margin-bottom:8px;">No diligenciar por el aspirante</p>
@@ -714,19 +684,27 @@ function descargarCarta(){
 
   const apellidos = gv('p_a1')+(gv('p_a2')?'-'+gv('p_a2'):'');
 
+  const _cont = document.createElement('div');
+  _cont.style.cssText='position:fixed;top:0;left:0;width:794px;background:#fff;z-index:-9999;opacity:0.01;pointer-events:none;overflow:hidden;';
+  _cont.innerHTML = cartaHtml;
+  document.body.appendChild(_cont);
+
   const opt = {
     margin: [15,15,15,15],
     filename: 'Solicitud-Afiliacion-SINTRAFIDUCIARIOS-'+apellidos+'.pdf',
     image: {type:'jpeg', quality:0.98},
-    html2canvas: {scale:2, useCORS:true, letterRendering:true},
+    html2canvas: {scale:2, useCORS:true, letterRendering:true, windowWidth:794},
     jsPDF: {unit:'mm', format:'a4', orientation:'portrait'},
-    pagebreak: {mode:['css','legacy'], before:'.page-break-before'}
+    pagebreak: {mode:['css','legacy']}
   };
 
-  html2pdf().set(opt).from(cartaHtml).save().then(()=>{
-    btn.disabled=false;
-    btn.innerHTML='⬇&nbsp; Descargar Carta de Solicitud Pre-diligenciada';
-  });
+  setTimeout(function(){
+    html2pdf().set(opt).from(_cont).save().then(function(){
+      document.body.removeChild(_cont);
+      btn.disabled=false;
+      btn.innerHTML='⬇&nbsp; Descargar Carta de Solicitud Pre-diligenciada';
+    });
+  },400);
 }
 </script>
 </body>
