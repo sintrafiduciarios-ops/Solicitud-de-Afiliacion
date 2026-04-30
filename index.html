@@ -604,9 +604,7 @@ function descargarCarta(){
     </div>
     <div style="height:2px;background:linear-gradient(90deg,#C9A84C,#f0d07a,#C9A84C);"></div>
     <div style="display:flex;justify-content:center;gap:20px;padding:4px 16px;flex-wrap:wrap;">
-      <span style="font-size:7pt;color:#aaa;"><b style="color:#C9A84C;">Organización Sindical de Primer Grado</b></span>
-      <span style="font-size:7pt;color:#aaa;">sintrafiduciarios@gmail.com</span>
-         <span style="font-size:7pt;color:#aaa;"><b style="color:#C9A84C;">Organización Sindical de Primer Grado</b></span>
+          <span style="font-size:7pt;color:#aaa;"><b style="color:#C9A84C;">Organización Sindical de Primer Grado</b></span>
       <span style="font-size:7pt;color:#aaa;">sintrafiduciarios@gmail.com</span>
       <span style="font-size:7pt;color:#aaa;">Calle 127A N.° 49-67, Apto. 104, Int. 2, Unidad 3, Conjunto Atabanza, Bogotá D.C.</span>
     </div>
@@ -715,10 +713,6 @@ function descargarCarta(){
 </div>`;
 
   const apellidos = gv('p_a1')+(gv('p_a2')?'-'+gv('p_a2'):'');
-  const container = document.createElement('div');
-  container.innerHTML = cartaHtml;
-  container.style.cssText = 'position:fixed;left:-9999px;top:0;';
-  document.body.appendChild(container);
 
   const opt = {
     margin: [15,15,15,15],
@@ -729,8 +723,7 @@ function descargarCarta(){
     pagebreak: {mode:['css','legacy'], before:'.page-break-before'}
   };
 
-  html2pdf().set(opt).from(container).save().then(()=>{
-    document.body.removeChild(container);
+  html2pdf().set(opt).from(cartaHtml).save().then(()=>{
     btn.disabled=false;
     btn.innerHTML='⬇&nbsp; Descargar Carta de Solicitud Pre-diligenciada';
   });
