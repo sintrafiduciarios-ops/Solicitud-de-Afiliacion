@@ -259,200 +259,7 @@ textarea{resize:vertical;min-height:60px;}
           <option>Pago directo a Tesorería</option>
         </select></div>
     </div>
-
-    <div class="section-title">III. Declaración y Compromisos del Aspirante</div>
-    <div class="legal">
-      El/La suscrito/a manifiesta de manera <b>libre, voluntaria e inequívoca</b> su deseo de
-      afiliarse a SINTRAFIDUCIARIOS (Art. 39° C.P. · Art. 353° CST · Ley 584/2000 · OIT Conv. 87 y 98).
-      En consecuencia, DECLARA Y ACEPTA:
-      <ol style="margin:7px 0 0 15px;line-height:1.9;">
-        <li>Cumple los requisitos del <b>Art. 7° Estatutos</b>: se desempeña en fiduciaria pública o
-          mixta, observa buena conducta y presenta esta solicitud según el formato adoptado.</li>
-        <li>Conoce y acepta los Estatutos de SINTRAFIDUCIARIOS y las decisiones de sus órganos
-          (<b>Art. 8°, lit. a.; Art. 362 num. 4° CST</b>).</li>
-        <li>Acepta el pago puntual de cuotas ordinarias, extraordinarias y multas
-          (<b>Arts. 31°, 33°, 34° Estatutos; Art. 400° CST</b>).</li>
-        <li>Autoriza el <b>descuento por nómina</b> a favor de SINTRAFIDUCIARIOS
-          (<b>Art. 400° CST; Art. 33° Estatutos</b>).</li>
-        <li>La información es verídica y se acoge al proceso del <b>Art. 7°, lit. c. Estatutos</b>.</li>
-        <li>La Junta Directiva puede negar el ingreso (<b>Parágrafo 1° Art. 7°</b>),
-          apelable ante la Asamblea General.</li>
-      </ol>
-    </div>
-
-    <div class="section-title">IV. Sustento Jurídico</div>
-    <table class="jur-table">
-      <tr><th>Norma</th><th>Contenido y Alcance</th></tr>
-      <tr><td><b>C.P. Art. 39°</b></td><td>Derecho fundamental de asociación sindical sin intervención del Estado.</td></tr>
-      <tr><td><b>OIT Conv. 87 (L.26/76)</b></td><td>Libertad sindical y protección del derecho de sindicación.</td></tr>
-      <tr><td><b>OIT Conv. 98 (L.27/76)</b></td><td>Sindicación y negociación colectiva; protección antisindical.</td></tr>
-      <tr><td><b>CST Art. 353° (L.584/2000)</b></td><td>Derecho de asociación libre sin autorización previa.</td></tr>
-      <tr><td><b>CST Art. 400°</b></td><td>Obligación del empleador de descontar y girar cuotas sindicales.</td></tr>
-      <tr><td><b>D. 1072/2015</b></td><td>Decreto Único Reglamentario del Sector Trabajo.</td></tr>
-      <tr><td><b>Estatutos Arts. 7°, 8°, 9°</b></td><td>Requisitos, obligaciones y derechos de los afiliados.</td></tr>
-      <tr><td><b>Estatutos Arts. 31°, 33°, 34°</b></td><td>Sin cuota de admisión. Cuota = 0.5% salario básico mensual.</td></tr>
-    </table>
-
-    <div class="section-title">V. Documentos Requeridos</div>
-    <div style="margin-bottom:14px;">
-      <p style="font-size:.8rem;color:#333;font-weight:600;margin-bottom:7px;">
-        📥 <b>Paso 1:</b> Descarga tu carta, ábrela en el navegador, haz clic en
-        <b>"Imprimir / Guardar como PDF"</b>, imprímela y fírmala:</p>
-      <button type="button" class="download-btn" id="btnDesc" onclick="descargarCarta()" disabled>
-        ⬇&nbsp; Descargar Carta Pre-diligenciada (.html)
-      </button>
-      <p class="nota-msg" id="msg_desc" style="color:#b00;">
-        Complete todos los campos obligatorios para habilitar esta opción.</p>
-    </div>
-    <div class="row" style="gap:14px;">
-      <div class="field">
-        <label>📤 Paso 2 — Carta firmada <span class="req">*</span></label>
-        <div class="upload-area" onclick="document.getElementById('f_carta').click()">
-          <span class="upload-icon">✍️</span>
-          <label class="upload-label">Clic para adjuntar la carta firmada<br>
-            <small>PDF, JPG o PNG — Máx. 5 MB</small></label>
-          <input type="file" id="f_carta" name="Carta_afiliacion_firmada"
-            accept=".pdf,.jpg,.jpeg,.png" required onchange="showName(this,'nm_c')">
-          <div class="file-name" id="nm_c"></div>
-        </div>
-      </div>
-      <div class="field">
-        <label>📤 Paso 3 — Copia del documento de identidad <span class="req">*</span></label>
-        <div class="upload-area" onclick="document.getElementById('f_ced').click()">
-          <span class="upload-icon">📄</span>
-          <label class="upload-label">Clic para adjuntar copia de cédula<br>
-            <small>PDF, JPG o PNG — Máx. 5 MB</small></label>
-          <input type="file" id="f_ced" name="Copia_cedula"
-            accept=".pdf,.jpg,.jpeg,.png" required onchange="showName(this,'nm_d')">
-          <div class="file-name" id="nm_d"></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section-title">VI. Autorización de Datos y Confirmación</div>
-    <div class="legal">
-      Conforme al <b>Art. 5° Ley 1581 de 2012</b>, la información suministrada constituye
-      <b>dato sensible</b> por corresponder a afiliación sindical.
-      Su tratamiento es exclusivo para gestionar esta solicitud.
-    </div>
-    <input type="hidden" id="h_ch1" name="1_Autoriza_tratamiento_datos" value="❌ No confirmado">
-    <input type="hidden" id="h_ch2" name="2_Afiliacion_voluntaria" value="❌ No confirmado">
-    <input type="hidden" id="h_ch3" name="3_Acepta_estatutos" value="❌ No confirmado">
-    <input type="hidden" id="h_ch4" name="4_Info_veridica" value="❌ No confirmado">
-    <div class="check-row">
-      <input type="checkbox" id="ch1" name="" value="Sí" required onchange="document.getElementById('h_ch1').value=this.checked?'✅ Sí, autoriza tratamiento de datos (Ley 1581/2012)':'❌ No confirmado'">
-      <label for="ch1">Autorizo el tratamiento de mis datos personales conforme a la
-        Ley 1581 de 2012, exclusivamente para los fines de la afiliación sindical. <span class="req">*</span></label>
-    </div>
-    <div class="check-row">
-      <input type="checkbox" id="ch2" name="" value="Sí" required onchange="document.getElementById('h_ch2').value=this.checked?'✅ Sí, afiliación libre y voluntaria (Art. 39° C.P.)':'❌ No confirmado'">
-      <label for="ch2">Manifiesto que mi afiliación es <b>libre, voluntaria e inequívoca</b>
-        en ejercicio del Art. 39° C.P. — Art. 353° CST — Ley 584/2000. <span class="req">*</span></label>
-    </div>
-    <div style="background:#f9f6ec;border-left:3px solid #C9A84C;border-radius:0 5px 5px 0;padding:10px 13px;margin:8px 0;">
-      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
-        <span style="font-size:.75rem;font-weight:700;color:#333;text-transform:uppercase;letter-spacing:.5px;">📋 Estatutos Sociales de SINTRAFIDUCIARIOS</span>
-        <a href="https://raw.githubusercontent.com/sintrafiduciarios-ops/Solicitud-de-Afiliacion/main/ESTATUTOS-SOCIALES-SINTRAFIDUCIARIOS-FIRMADO-2.pdf"
-          target="_blank" download="ESTATUTOS-SOCIALES-SINTRAFIDUCIARIOS.pdf"
-          style="display:inline-flex;align-items:center;gap:6px;background:#111;color:#C9A84C;border:1.5px solid #C9A84C;padding:6px 14px;border-radius:5px;font-size:.76rem;font-weight:700;text-decoration:none;letter-spacing:.5px;text-transform:uppercase;"
-          onmouseover="this.style.background='#C9A84C';this.style.color='#111';"
-          onmouseout="this.style.background='#111';this.style.color='#C9A84C';">⬇ Descargar Estatutos (PDF)</a>
-      </div>
-      <p style="font-size:.73rem;color:#666;margin-bottom:8px;line-height:1.5;">
-        Antes de marcar esta casilla, descargue y lea los Estatutos.</p>
-      <div class="check-row" style="margin:0;">
-        <input type="checkbox" id="ch3" name="" value="Sí" required onchange="document.getElementById('h_ch3').value=this.checked?'✅ Sí, acepta Estatutos SINTRAFIDUCIARIOS (Arts. 7°,8°,31°–34°, Cap. XI)':'❌ No confirmado'">
-        <label for="ch3">He leído y acepto los Estatutos de SINTRAFIDUCIARIOS, incluyendo
-          obligaciones (Art. 8°), cuotas (Arts. 31°–34°) y régimen disciplinario (Cap. XI).
-          <span class="req">*</span></label>
-      </div>
-    </div>
-    <div class="check-row">
-      <input type="checkbox" id="ch4" name="" value="Sí" required onchange="document.getElementById('h_ch4').value=this.checked?'✅ Sí, declara información verídica y completa':'❌ No confirmado'">
-      <label for="ch4">Declaro bajo la gravedad del juramento que la información consignada
-        es <b>verídica y completa</b>. <span class="req">*</span></label>
-    </div>
-
-    <button type="submit" class="btn-submit">
-      📨 Enviar Solicitud de Afiliación a SINTRAFIDUCIARIOS
-    </button>
-  </form>
-  </div>
-  <div class="card-footer">
-    <b style="color:#C9A84C;">SINTRAFIDUCIARIOS</b> — sintrafiduciarios@gmail.com<br>
-    Calle 127A N.° 49-67, Apto. 104, Int. 2, Unidad 3, Conjunto Atabanza, Bogotá D.C.<br>
-    <small>Organización Sindical de Primer Grado | Art. 39° C.P. · Arts. 353°, 364° CST · Ley 584/2000 · D. 1072/2015 · OIT Conv. 87 y 98</small>
-  </div>
-</div>
-        <select id="l_ent_sel" name="" onchange="handleEntidad(this)">
-          <option value="">Seleccionar...</option>
-          <option value="Fiduciaria La Previsora S.A. — FIDUPREVISORA">Fiduciaria La Previsora S.A. — FIDUPREVISORA</option>
-          <option value="OTRA">Otra fiduciaria pública o mixta...</option>
-        </select>
-        <input type="hidden" id="l_ent" name="Entidad_empleadora">
-      </div>
-      <div class="field" id="otra_wrap" style="display:none;">
-        <label>Especifica la entidad <span class="req">*</span></label>
-        <input type="text" id="otra_ent" placeholder="Nombre completo de la fiduciaria">
-      </div>
-    </div>
-    <div class="row">
-      <div class="field w33"><label>NIT de la entidad <span class="req">*</span></label>
-        <input type="text" id="l_nit" name="NIT_entidad"
-          placeholder="Ej: 860.525.148-5" required
-          oninput="soloNumeros(this,'.','-')"></div>
-      <div class="field full"><label>Dirección de la entidad <span class="req">*</span></label>
-        <input type="text" id="l_dent" name="Direccion_entidad"
-          placeholder="Ej: Calle 72 # 10-03, Bogotá D.C." required></div>
-    </div>
-    <div class="row">
-      <div class="field"><label>Cargo <span class="req">*</span></label>
-        <input type="text" id="l_cargo" name="Cargo"
-          placeholder="Ej: Analista Fiduciario" required></div>
-      <div class="field w33"><label>Tipo de vinculación <span class="req">*</span></label>
-        <select id="l_vinc" name="Tipo_vinculacion" required>
-          <option value="">Seleccionar...</option>
-          <option value="Trabajador oficial (planta)">Trabajador oficial (planta)</option>
-          <option value="Trabajador en provisionalidad">Trabajador en provisionalidad</option>
-          <option value="Trabajador en misión — empresa temporal">Trabajador en misión (empresa temporal)</option>
-          <option value="Contrato de prestación de servicios">Contrato de prestación de servicios</option>
-          <option value="Otro">Otro</option>
-        </select></div>
-    </div>
-    <div class="row">
-      <div class="field"><label>Área o dependencia <span class="req">*</span></label>
-        <input type="text" id="l_area" name="Area_dependencia"
-          placeholder="Ej: Vicepresidencia Fondo Magisterio" required></div>
-      <div class="field w33"><label>Fecha de ingreso <span class="req">*</span></label>
-        <input type="date" id="l_fi" name="Fecha_ingreso" required></div>
-    </div>
-    <div class="row">
-      <div class="field w33"><label>Antigüedad <span class="req">*</span></label>
-        <input type="text" id="l_ant" name="Antiguedad"
-          placeholder="Ej: 3 años y 2 meses" required></div>
-      <div class="field w33"><label>Salario básico mensual ($) <span class="req">*</span></label>
-        <input type="number" id="l_sal" name="Salario_basico"
-          placeholder="Ej: 3500000" min="0" step="1000" required
-          oninput="calcCuota();checkDownload();"></div>
-      <div class="field w33"><label>Cuota sindical mensual (0.5%)</label>
-        <input type="text" id="l_cuota" name="Cuota_sindical" readonly
-          placeholder="Se calcula automáticamente"></div>
-    </div>
-    <div class="info-box">
-      <b>Art. 32° Estatutos:</b> No existe cuota de admisión. &nbsp;|&nbsp;
-      <b>Art. 33° Estatutos:</b> Cuota ordinaria = <b>0.5% del salario básico mensual</b>,
-      descontada por nómina (Art. 400° CST).
-    </div>
-    <div class="row">
-      <div class="field"><label>Forma de pago de la cuota sindical <span class="req">*</span></label>
-        <select id="l_fp" name="Forma_pago" required>
-          <option value="">Seleccionar...</option>
-          <option>Descuento por nómina</option>
-          <option>Pago directo a Tesorería</option>
-        </select></div>
-    </div>
-
-    <div class="section-title">III. Declaración y Compromisos del Aspirante</div>
+        <div class="section-title">III. Declaración y Compromisos del Aspirante</div>
     <div class="legal">
       El/La suscrito/a manifiesta de manera <b>libre, voluntaria e inequívoca</b> su deseo de
       afiliarse a SINTRAFIDUCIARIOS (Art. 39° C.P. · Art. 353° CST · Ley 584/2000 · OIT Conv. 87 y 98).
@@ -675,52 +482,52 @@ function descargarCarta(){
 <title>Solicitud Afiliación SINTRAFIDUCIARIOS</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Times New Roman',serif;font-size:10.5pt;color:#111;background:#fff;}
-@page{size:A4;margin:18mm 20mm 18mm 20mm;}
-.page{max-width:170mm;margin:0 auto;background:#fff;}
+body{font-family:'Times New Roman',serif;font-size:9pt;color:#111;background:#fff;}
+@page{size:A4;margin:12mm 14mm 12mm 14mm;}
+.page{max-width:182mm;margin:0 auto;}
 .membrete{background:#111;}
-.mb-top{display:flex;align-items:center;padding:12px 18px;gap:14px;}
-.mb-text h1{font-size:19pt;font-weight:900;letter-spacing:3px;color:#C9A84C;text-transform:uppercase;line-height:1;}
-.mb-text p{font-size:8.5pt;color:#d4b96a;letter-spacing:1.5px;margin-top:3px;}
-.gold-bar{height:3px;background:linear-gradient(90deg,#C9A84C,#f0d07a,#C9A84C);}
-.mb-sub{display:flex;justify-content:center;gap:16px;padding:5px 18px;flex-wrap:wrap;}
-.mb-sub span{font-size:7pt;color:#999;}
+.mb-top{padding:8px 14px;}
+.mb-text h1{font-size:15pt;font-weight:900;letter-spacing:2px;color:#C9A84C;text-transform:uppercase;line-height:1;}
+.mb-text p{font-size:7pt;color:#d4b96a;letter-spacing:1px;margin-top:2px;}
+.gold-bar{height:2px;background:linear-gradient(90deg,#C9A84C,#f0d07a,#C9A84C);}
+.mb-sub{display:flex;justify-content:center;gap:14px;padding:3px 14px;flex-wrap:wrap;}
+.mb-sub span{font-size:6.5pt;color:#999;}
 .mb-sub span b{color:#C9A84C;}
-.cont{padding:14px 0 10px;}
-h2{text-align:center;font-size:12pt;text-transform:uppercase;letter-spacing:2px;border-bottom:2px solid #111;padding-bottom:5px;margin:0 0 6px;}
-.sub{text-align:center;font-size:8pt;color:#666;margin-bottom:14px;}
-h3{font-size:9pt;font-weight:700;text-transform:uppercase;letter-spacing:.8px;background:#111;color:#C9A84C;padding:4px 9px;margin:14px 0 6px;page-break-after:avoid;}
-table.t{width:100%;border-collapse:collapse;font-size:9.5pt;margin-bottom:6px;page-break-inside:avoid;}
-table.t td{padding:4px 7px;border:1px solid #ccc;vertical-align:top;line-height:1.4;}
-table.t td:first-child{font-weight:bold;width:43%;background:#f9f8f3;font-size:9pt;}
-table.jt{width:100%;border-collapse:collapse;font-size:8.5pt;margin:5px 0;page-break-inside:avoid;}
-table.jt th{background:#111;color:#C9A84C;padding:4px 7px;text-align:left;font-weight:700;}
-table.jt td{padding:3.5px 7px;border-bottom:1px solid #e0e0e0;vertical-align:top;}
+.cont{padding:7px 0 6px;}
+h2{text-align:center;font-size:10pt;text-transform:uppercase;letter-spacing:2px;border-bottom:1.5px solid #111;padding-bottom:3px;margin:0 0 3px;}
+.sub{text-align:center;font-size:7pt;color:#666;margin-bottom:6px;}
+h3{font-size:7.5pt;font-weight:700;text-transform:uppercase;letter-spacing:.6px;background:#111;color:#C9A84C;padding:3px 7px;margin:7px 0 4px;page-break-after:avoid;}
+table.t{width:100%;border-collapse:collapse;font-size:8.5pt;margin-bottom:4px;page-break-inside:avoid;}
+table.t td{padding:2.5px 5px;border:1px solid #ccc;vertical-align:top;line-height:1.3;}
+table.t td:first-child{font-weight:bold;width:40%;background:#f9f8f3;font-size:8pt;}
+table.jt{width:100%;border-collapse:collapse;font-size:7.5pt;margin:3px 0;page-break-inside:avoid;}
+table.jt th{background:#111;color:#C9A84C;padding:3px 6px;text-align:left;font-weight:700;}
+table.jt td{padding:2.5px 6px;border-bottom:1px solid #e0e0e0;vertical-align:top;}
 table.jt tr:nth-child(even) td{background:#f9f9f9;}
-.decl{font-size:9.5pt;line-height:1.8;text-align:justify;margin:8px 0;}
-ol.dl{margin-left:16px;line-height:1.85;font-size:9.5pt;}
-ol.dl li{margin-bottom:3px;}
-.sec-firmas{page-break-before:always;}
-.firmas-wrap{display:flex;gap:28px;justify-content:space-around;margin-top:20px;page-break-inside:avoid;}
+.decl{font-size:8.5pt;line-height:1.6;text-align:justify;margin:4px 0;}
+ol.dl{margin-left:14px;line-height:1.55;font-size:8.5pt;}
+ol.dl li{margin-bottom:1px;}
+.firmas-wrap{display:flex;gap:20px;justify-content:space-around;margin-top:6px;page-break-inside:avoid;}
 .firma-box{text-align:center;flex:1;}
-.firma-linea{border-top:1.5px solid #333;margin-top:60px;padding-top:6px;font-size:8.5pt;line-height:1.65;}
-.interno-note{font-size:8pt;color:#666;font-style:italic;text-align:center;margin:3px 0 6px;}
-table.int{width:100%;border-collapse:collapse;font-size:9pt;page-break-inside:avoid;}
-table.int td{padding:5px 7px;border:1px solid #bbb;vertical-align:top;line-height:1.4;}
-table.int td:first-child{font-weight:bold;width:55%;background:#f9f8f3;font-size:8.5pt;}
-.pie-gold{height:2px;background:linear-gradient(90deg,#C9A84C,#f0d07a,#C9A84C);margin-top:18px;}
-.pie{background:#111;padding:7px 18px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:5px;}
-.pie-l,.pie-r{font-size:7pt;color:#888;line-height:1.5;}
+.firma-linea{border-top:1px solid #333;margin-top:30px;padding-top:4px;font-size:7.5pt;line-height:1.5;}
+.interno-note{font-size:7pt;color:#666;font-style:italic;text-align:center;margin:2px 0 4px;}
+table.int{width:100%;border-collapse:collapse;font-size:8pt;page-break-inside:avoid;}
+table.int td{padding:3.5px 6px;border:1px solid #bbb;vertical-align:top;line-height:1.3;}
+table.int td:first-child{font-weight:bold;width:55%;background:#f9f8f3;font-size:7.5pt;}
+.pie-gold{height:2px;background:linear-gradient(90deg,#C9A84C,#f0d07a,#C9A84C);margin-top:8px;}
+.pie{background:#111;padding:5px 14px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:4px;}
+.pie-l,.pie-r{font-size:6.5pt;color:#888;line-height:1.4;}
 .pie-l b,.pie-r b{color:#C9A84C;}
 .pie-r{text-align:right;}
-.print-bar{background:#f5f0e0;border:1.5px solid #C9A84C;padding:9px 18px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:12px;}
-.print-bar p{font-size:8.5pt;color:#555;}
-.print-bar button{background:#111;color:#C9A84C;border:1.5px solid #C9A84C;padding:6px 18px;border-radius:5px;font-size:9pt;font-weight:700;cursor:pointer;text-transform:uppercase;letter-spacing:1px;}
+.print-bar{background:#f5f0e0;border:1.5px solid #C9A84C;padding:7px 14px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;}
+.print-bar p{font-size:8pt;color:#555;}
+.print-bar button{background:#111;color:#C9A84C;border:1.5px solid #C9A84C;padding:5px 14px;border-radius:4px;font-size:8pt;font-weight:700;cursor:pointer;text-transform:uppercase;}
 .print-bar button:hover{background:#C9A84C;color:#111;}
-@media print{.print-bar{display:none;}body{-webkit-print-color-adjust:exact;print-color-adjust:exact;}}
+@media print{.print-bar{display:none;}
+  body{-webkit-print-color-adjust:exact;print-color-adjust:exact;}}
 </style></head><body>
 <div class="print-bar">
-  <p>⚠️ <b>Instrucciones:</b> Imprima este documento, fírmelo, escanéelo y adjúntelo en el formulario.</p>
+  <p>⚠️ <b>Instrucciones:</b> Imprima, firme, escanee y adjunte en el formulario.</p>
   <button onclick="window.print()">🖨️ Imprimir / Guardar como PDF</button>
 </div>
 <div class="page">
@@ -787,10 +594,10 @@ table.int td:first-child{font-weight:bold;width:55%;background:#f9f8f3;font-size
       <tr><td><b>CST Art. 353° (L.584/2000)</b></td><td>Derecho de asociación libre sin autorización previa.</td></tr>
       <tr><td><b>CST Art. 400°</b></td><td>Obligación del empleador de descontar y girar cuotas sindicales.</td></tr>
       <tr><td><b>Estatutos Arts. 7°, 8°, 9°</b></td><td>Requisitos, obligaciones y derechos de los afiliados.</td></tr>
-      <tr><td><b>Estatutos Arts. 31°, 33°, 34°</b></td><td>Sin cuota de admisión. Cuota ordinaria = 0.5% del salario básico mensual.</td></tr>
+      <tr><td><b>Estatutos Arts. 31°, 33°, 34°</b></td><td>Sin cuota de admisión. Cuota = 0.5% del salario básico mensual.</td></tr>
     </table>
 
-    <div class="sec-firmas">
+    <div style="margin-top:6px;">
       <h3>V. Firmas y Fecha de Solicitud</h3>
       <p class="decl">En constancia de lo anterior, suscribo la presente solicitud en la ciudad de Bogotá D.C., a los <b>${fecha}</b>.</p>
       <div class="firmas-wrap">
@@ -807,7 +614,7 @@ table.int td:first-child{font-weight:bold;width:55%;background:#f9f8f3;font-size
       </div>
     </div>
 
-    <div class="sec-firmas">
+    <div style="margin-top:6px;">
       <h3>VI. Diligenciamiento Interno — Junta Directiva</h3>
       <p class="interno-note">No diligenciar por el aspirante</p>
       <table class="int">
