@@ -116,12 +116,7 @@ textarea{resize:vertical;min-height:60px;}
       Luego descargue la carta pre-diligenciada, ábrala en el navegador, imprímala, fírmela y adjúntela.</p>
   </div>
   <div class="card-body">
-  <form id="mainForm" action="https://formspree.io/f/mlgvdwjo"
-        method="POST" enctype="multipart/form-data">
-    <input type="hidden" name="_subject" value="Nueva Solicitud de Afiliación — SINTRAFIDUCIARIOS">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_template" value="table">
-    <input type="hidden" name="_autoresponse" value="Hemos recibido su solicitud de afiliación a SINTRAFIDUCIARIOS. La Junta Directiva la estudiará y le informaremos el resultado. sintrafiduciarios@gmail.com">
+  <form id="mainForm">
 
     <div class="section-title">I. Datos Personales del Aspirante</div>
     <div class="row">
@@ -376,7 +371,7 @@ textarea{resize:vertical;min-height:60px;}
         es <b>verídica y completa</b>. <span class="req">*</span></label>
     </div>
 
-    <button type="submit" class="btn-submit">
+    <button type="submit" class="btn-submit" id="btnEnviar">
       📨 Enviar Solicitud de Afiliación a SINTRAFIDUCIARIOS
     </button>
   </form>
@@ -653,5 +648,108 @@ table.int td:first-child{font-weight:bold;width:55%;background:#f9f8f3;font-size
   btn.innerHTML='⬇&nbsp; Descargar Carta Pre-diligenciada (.html)';
 }
 </script>
+
+<script>
+/* ============================================================
+   NUEVO SCRIPT — Envío al Google Apps Script via fetch/JSON
+   NO modifica nada del script existente arriba
+   ============================================================ */
+(function(){
+
+  var GAS_URL = 'https://script.google.com/macros/s/AKfycbwxbUakug7TCvZpz9uU7H7UOA19XOU68celljWfD-0eKVAnEei4gMTizpybUeNj85X-tw/exec';
+
+  function fileToBase64(file){
+    return new Promise(function(resolve, reject){
+      if(!file){ resolve(null); return; }
+      var reader = new FileReader();
+      reader.onload = function(e){ resolve(e.target.result); };
+      reader.onerror = function(){ reject(new Error('Error leyendo archivo')); };
+      reader.readAsDataURL(file);
+    });
+  }
+
+  document.getElementById('mainForm').addEventListener('submit', function(e){
+    e.preventDefault();
+
+    var btn = document.getElementById('btnEnviar');
+    var textoOriginal = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '⏳ Enviando…';
+
+    var formEl = document.getElementById('mainForm');
+    var fd = new FormData(formEl);
+
+    var campos = {};
+    fd.forEach(function(val, key){
+      if(key && key !== '' && !(val instanceof File)){
+        campos[key] = val;
+      }
+    });
+
+    var archivoCarta = document.getElementById('f_carta').files[0] || null;
+    var archivoCedula = document.getElementById('f_ced').files[0] || null;
+
+    Promise.all([
+      fileToBase64(archivoCarta),
+      fileToBase64(archivoCedula)
+    ]).then(function(resultados){
+
+      var b64Carta = resultados[0];
+      var b64Cedula = resultados[1];
+
+      var payload = {
+        campos: campos,
+        carta: b64Carta ? {
+          nombre: archivoCarta.name,
+          tipo: archivoCarta.type,
+          base64: b64Carta
+        } : null,
+        cedula: b64Cedula ? {
+          nombre: archivoCedula.name,
+          tipo: archivoCedula.type,
+          base64: b64Cedula
+        } : null
+      };
+
+      return fetch(GAS_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain' },
+        body: JSON.stringify(payload)
+      });
+
+    }).then(function(resp){
+      return resp.json();
+    }).then(function(data){
+
+      btn.disabled = false;
+      btn.innerHTML = textoOriginal;
+
+      if(data && data.success === true){
+        alert('✅ ¡Solicitud enviada correctamente!\n\nSu solicitud de afiliación a SINTRAFIDUCIARIOS ha sido recibida. La Junta Directiva la estudiará y le informará el resultado a su correo electrónico.\n\nsintrafiduciarios@gmail.com');
+        formEl.reset();
+        document.getElementById('nm_c').textContent = '';
+        document.getElementById('nm_d').textContent = '';
+        document.getElementById('l_cuota').value = '';
+        document.getElementById('l_ent').value = '';
+        document.getElementById('otra_wrap').style.display = 'none';
+        document.getElementById('l_nit').readOnly = false;
+        document.getElementById('l_nit').style.background = '';
+        checkDownload();
+      } else {
+        var msg = (data && data.error) ? data.error : 'Error desconocido en el servidor.';
+        alert('❌ Error al enviar la solicitud.\n\nDetalle: ' + msg + '\n\nPor favor intente nuevamente o contáctenos en sintrafiduciarios@gmail.com');
+      }
+
+    }).catch(function(err){
+      btn.disabled = false;
+      btn.innerHTML = textoOriginal;
+      alert('❌ Error de conexión.\n\nNo fue posible enviar la solicitud. Verifique su conexión a internet e intente nuevamente.\n\nSi el problema persiste, contáctenos en sintrafiduciarios@gmail.com\n\nDetalle técnico: ' + err.message);
+    });
+
+  });
+
+})();
+</script>
+
 </body>
 </html>
