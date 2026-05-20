@@ -592,8 +592,28 @@ table.int td:first-child{font-weight:bold;width:55%;background:#f9f8f3;font-size
       <tr><td><b>Estatutos Arts. 31°, 33°, 34°</b></td><td>Sin cuota de admisión. Cuota = 0.5% del salario básico mensual.</td></tr>
     </table>
 
+    <h3>V. Autorización de Datos y Declaraciones del Aspirante</h3>
+    <table class="t" style="font-size:8pt;">
+      <tr>
+        <td style="width:5%;text-align:center;font-size:11pt;">${document.getElementById('ch1').checked?'☑':'☐'}</td>
+        <td><b>Autorización tratamiento de datos (Ley 1581/2012):</b> Autorizo el tratamiento de mis datos personales conforme a la Ley 1581 de 2012, exclusivamente para los fines de la afiliación sindical.</td>
+      </tr>
+      <tr>
+        <td style="width:5%;text-align:center;font-size:11pt;">${document.getElementById('ch2').checked?'☑':'☐'}</td>
+        <td><b>Afiliación libre y voluntaria (Art. 39° C.P.):</b> Manifiesto que mi afiliación es libre, voluntaria e inequívoca en ejercicio del Art. 39° C.P. — Art. 353° CST — Ley 584/2000.</td>
+      </tr>
+      <tr>
+        <td style="width:5%;text-align:center;font-size:11pt;">${document.getElementById('ch3').checked?'☑':'☐'}</td>
+        <td><b>Aceptación de Estatutos SINTRAFIDUCIARIOS:</b> He leído y acepto los Estatutos de SINTRAFIDUCIARIOS, incluyendo obligaciones (Art. 8°), cuotas (Arts. 31°–34°) y régimen disciplinario (Cap. XI).</td>
+      </tr>
+      <tr>
+        <td style="width:5%;text-align:center;font-size:11pt;">${document.getElementById('ch4').checked?'☑':'☐'}</td>
+        <td><b>Declaración de veracidad:</b> Declaro bajo la gravedad del juramento que la información consignada es verídica y completa.</td>
+      </tr>
+    </table>
+
     <div style="margin-top:6px;">
-      <h3>V. Firmas y Fecha de Solicitud</h3>
+      <h3>VI. Firmas y Fecha de Solicitud</h3>
       <p class="decl">En constancia de lo anterior, suscribo la presente solicitud en la ciudad de Bogotá D.C., a los <b>${fecha}</b>.</p>
       <div class="firmas-wrap">
         <div class="firma-box">
@@ -610,7 +630,7 @@ table.int td:first-child{font-weight:bold;width:55%;background:#f9f8f3;font-size
     </div>
 
     <div style="margin-top:6px;">
-      <h3>VI. Diligenciamiento Interno — Junta Directiva</h3>
+      <h3>VII. Diligenciamiento Interno — Junta Directiva</h3>
       <p class="interno-note">No diligenciar por el aspirante</p>
       <table class="int">
         <tr><td>Fecha de recepción de la solicitud:</td><td>&nbsp;</td></tr>
@@ -656,7 +676,7 @@ table.int td:first-child{font-weight:bold;width:55%;background:#f9f8f3;font-size
    ============================================================ */
 (function(){
 
-  var GAS_URL = 'https://script.google.com/macros/s/AKfycbzPrlWdnr9azZ5ma_aApc0yYQy3Hzj0RVVWg0iXAjTlPg2NAez0cJELqKTqCRvCjxkCEg/exec';
+  var GAS_URL = 'https://script.google.com/macros/s/1edFhgxpUrjP-8aFqEyBUagH4FF5MxZt6YnVSPJ696Qwkw9MZD3g58lwl/exec';
 
   function fileToBase64(file){
     return new Promise(function(resolve, reject){
@@ -736,14 +756,37 @@ table.int td:first-child{font-weight:bold;width:55%;background:#f9f8f3;font-size
         document.getElementById('l_nit').style.background = '';
         checkDownload();
       } else {
-        var msg = (data && data.error) ? data.error : 'Error desconocido en el servidor.';
-        alert('❌ Error al enviar la solicitud.\n\nDetalle: ' + msg + '\n\nPor favor intente nuevamente o contáctenos en sintrafiduciarios@gmail.com');
+        btn.disabled = false;
+        btn.innerHTML = textoOriginal;
+        alert(
+          '⚠️ AVISO IMPORTANTE\n\n' +
+          'Debido a un inconveniente técnico temporal, su solicitud NO pudo enviarse automáticamente a través del formulario.\n\n' +
+          'Por favor remita manualmente los siguientes documentos al correo:\n\n' +
+          '📧  sintrafiduciarios@gmail.com\n\n' +
+          '📎 Documentos a adjuntar:\n' +
+          '   1. La carta de afiliación firmada (descargada en el Paso 1)\n' +
+          '   2. Copia de su documento de identidad\n\n' +
+          '📝 En el asunto del correo escriba:\n' +
+          '   "Solicitud de Afiliación — [Su nombre completo]"\n\n' +
+          'Nos disculpamos por los inconvenientes. La Junta Directiva procesará su solicitud tan pronto reciba los documentos.'
+        );
       }
 
     }).catch(function(err){
       btn.disabled = false;
       btn.innerHTML = textoOriginal;
-      alert('❌ Error de conexión.\n\nNo fue posible enviar la solicitud. Verifique su conexión a internet e intente nuevamente.\n\nSi el problema persiste, contáctenos en sintrafiduciarios@gmail.com\n\nDetalle técnico: ' + err.message);
+      alert(
+        '⚠️ AVISO IMPORTANTE\n\n' +
+        'Debido a un inconveniente técnico temporal, su solicitud NO pudo enviarse automáticamente a través del formulario.\n\n' +
+        'Por favor remita manualmente los siguientes documentos al correo:\n\n' +
+        '📧  sintrafiduciarios@gmail.com\n\n' +
+        '📎 Documentos a adjuntar:\n' +
+        '   1. La carta de afiliación firmada (descargada en el Paso 1)\n' +
+        '   2. Copia de su documento de identidad\n\n' +
+        '📝 En el asunto del correo escriba:\n' +
+        '   "Solicitud de Afiliación — [Su nombre completo]"\n\n' +
+        'Nos disculpamos por los inconvenientes. La Junta Directiva procesará su solicitud tan pronto reciba los documentos.'
+      );
     });
 
   });
